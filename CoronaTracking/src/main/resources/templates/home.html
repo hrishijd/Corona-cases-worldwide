@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Corona virus</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" 
+          href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <body class="container">
+  <h1>Corona Tracker</h1>
+  <h2>total no. of cases reported today =</h2>
+  	<h2 th:text="${Changes}"></h2>
+  	<table class="table table-striped">
+      <tr>
+        <th>Country</th>
+        <th>State</th>
+        <th>No. of cases</th>
+      </tr>
+      <tr th:each="inst : ${List}">
+        <td th:text="${inst.country}"></td>
+        <td th:text="${inst.province}"></td>
+        <td th:text="${inst.latestRp}"></td>
+      </tr>
+    </table>
+  </body>
+
+</html>
